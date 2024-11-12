@@ -1,0 +1,241 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Configurer le conteneur principal `body` pour le snapping vertical
+body {
+  @apply mx-16 md:mx-16 bg-gradient-to-b from-black to-blue-950;
+  // Dégradé de fond
+}
+
+html {
+  @apply scroll-smooth ;
+  // Activer le scrolling fluide
+}
+
+// Style de chaque page
+.page {
+  @apply min-h-screen              // Hauteur minimum sur mobile
+  py-4 md:py-8             // Padding vertical réduit sur mobile
+  grid
+  grid-cols-1              // Une seule colonne sur mobile
+  gap-4 lg:gap-6          // Espacement réduit sur mobile
+  lg:grid-cols-12         // Grille 12 colonnes sur desktop
+  lg:grid-rows-6
+  lg:mb-4;         // Rangées sur desktop
+}
+
+// Style pour chaque cellule `.cell`
+.cell {
+  @apply transition duration-[1000ms] ease-in-out h-full opacity-80 border border-gray-700 w-full rounded-2xl bg-gray-800 mb-4 md:mb-10;
+  // Styles de base
+}
+
+.link {
+  @apply text-white hover:text-indigo-400 transition duration-300 p-2 md:p-0;
+  // Style des liens
+}
+
+@media (min-width: 768px) {
+  .cell:hover {
+    @apply shadow-2xl shadow-indigo-900 ;
+    // Animation au survol
+  }
+}
+
+.scroll-l {
+  animation: scroll-from-left 1s ease-out;
+}
+
+.scroll-r {
+  animation: scroll-from-right 1s ease-out;
+}
+
+
+// Ajout de l'effet d'animation de HARD SKILLS
+.wrapper {
+  width: 90%;
+  max-width: 1536px;
+  margin-inline: auto;
+  position: relative;
+  height: 100px;
+  margin-top: 3rem;
+  overflow: hidden;
+  mask-image: linear-gradient(
+                  to right,
+                  rgba(0, 0, 0, 0),
+                  rgba(0, 0, 0, 1) 20%,
+                  rgba(0, 0, 0, 1) 80%,
+                  rgba(0, 0, 0, 0)
+  );
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    margin-top: 5rem;
+  }
+}
+
+@keyframes scrollLeft {
+  to {
+    left: -200px;
+  }
+}
+
+.slider-container {
+  width: 100%;
+  height: 100px; /* Ajuste la hauteur pour s'adapter aux éléments agrandis */
+  overflow: hidden; /* Cache ce qui dépasse des éléments */
+  position: relative;
+}
+
+.item {
+  width: 100px;
+  height: 100px;
+  border-radius: 6px;
+  position: absolute;
+  left: max(calc(100px * 9), 100%);
+  animation-name: scrollLeft;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@media (min-width: 1024px) {
+  .wrapper {
+    margin-top: 18rem;
+  }
+
+  .slider-container {
+    width: 100%;
+    height: 300px; /* Ajuste la hauteur pour s'adapter aux éléments agrandis */
+    overflow: hidden; /* Cache ce qui dépasse des éléments */
+    position: relative;
+  }
+
+  .item {
+    width: 200px;
+    height: 200px;
+    border-radius: 6px;
+    position: absolute;
+    left: max(calc(300px * 9), 100%);
+    animation-name: scrollLeft;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+}
+
+.item1 {
+  animation-delay: calc(30s / 9 * (9 - 1) * -1);
+  background-image: url("./img/HTML.png");
+  background-size: cover;
+}
+
+.item2 {
+  animation-delay: calc(30s / 9 * (9 - 2) * -1);
+  background-image: url("./img/CSS.png");
+  background-size: cover;
+}
+
+.item3 {
+  animation-delay: calc(30s / 9 * (9 - 3) * -1);
+  background-image: url("./img/JS.png");
+  background-size: cover;
+}
+
+.item4 {
+  animation-delay: calc(30s / 9 * (9 - 4) * -1);
+  background-image: url("./img/php.png");
+  background-size: cover;
+}
+
+.item5 {
+  animation-delay: calc(30s / 9 * (9 - 5) * -1);
+  background-image: url("./img/tailwindcss.png");
+  background-size: 95%;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+.item6 {
+  animation-delay: calc(30s / 9 * (9 - 6) * -1);
+  background-image: url("./img/symfony.png");
+  background-size: cover;
+}
+
+.item7 {
+  animation-delay: calc(30s / 9 * (9 - 7) * -1);
+  background-image: url("./img/git.png");
+  background-size: cover;
+}
+
+.item8 {
+  animation-delay: calc(30s / 9 * (9 - 8) * -1);
+  background-image: url("./img/mysql.png");
+  background-size: cover;
+}
+
+.item9 {
+  animation-delay: calc(30s / 9 * (9 - 9) * -1);
+  background-image: url("./img/react.png");
+  background-size: cover;
+}
+
+// Modification de la taille des icônes de réseaux sociaux
+#social .social-icon {
+  width: 100px;  // Adjust the width as needed
+  height: 100px; // Adjust the height as needed
+  transition: transform 0.3s;
+}
+
+#social .social-icon:hover {
+  transform: scale(1.1); // Slightly enlarge the icon on hover
+}
+@media (min-width: 768px) {
+  #social .social-icon {
+    width: 200px;  // Adjust the width as needed
+    height: 200px; // Adjust the height as needed
+    margin-top: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  #social {
+    gap: 8rem;
+  }
+
+  #social .social-icon {
+    width: 200px;  // Adjust the width as needed
+    height: 200px; // Adjust the height as needed
+    padding-top: 1rem;
+  }
+}
+
+// Ecriture Hello World en animation
+
+.typewriter h2 {
+  color: #fff;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid #818cf8; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation:
+          typing 3.5s steps(30, end),
+          blink-caret .5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #818cf8 }
+}
+
