@@ -27,7 +27,7 @@ html {
 
 // Style pour chaque cellule `.cell`
 .cell {
-  @apply transition duration-[1000ms] ease-in-out h-full opacity-80 border border-gray-700 w-full rounded-2xl bg-gray-800 mb-4 md:mb-10;
+  @apply transition duration-[1000ms] ease-in-out h-full opacity-80 border border-gray-700 w-full rounded-2xl bg-gray-800 mb-4 ;
   // Styles de base
 }
 
