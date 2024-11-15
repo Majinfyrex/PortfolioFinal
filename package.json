@@ -15,11 +15,13 @@
     "sass-embedded": "^1.80.6",
     "scss": "^0.2.4",
     "tailwindcss": "^3.4.14",
+    "tailwindcss-intersect": "^2.0.1",
     "vite": "^5.4.11"
   },
   "dependencies": {
     "flowbite": "^2.5.2",
     "rollup": "^4.25.0",
-    "scrollreveal": "^4.0.9"
+    "scrollreveal": "^4.0.9",
+    "tailwindcss-animated": "^1.1.2"
   }
 }

@@ -4,7 +4,7 @@
 
 // Configurer le conteneur principal `body` pour le snapping vertical
 body {
-  @apply mx-16 md:mx-16 bg-gradient-to-b from-black to-blue-950;
+  @apply mx-16 md:mx-16 bg-gradient-to-b from-black to-black;
   // Dégradé de fond
 }
 
@@ -21,15 +21,24 @@ html {
   grid-cols-1              // Une seule colonne sur mobile
   gap-4 lg:gap-6          // Espacement réduit sur mobile
   lg:grid-cols-12         // Grille 12 colonnes sur desktop
-  lg:grid-rows-6
+  lg:grid-rows-4
   lg:mb-4;         // Rangées sur desktop
 }
 
 // Style pour chaque cellule `.cell`
 .cell {
-  @apply transition duration-[1000ms] ease-in-out h-full opacity-80 border border-gray-700 w-full rounded-2xl bg-gray-800 mb-4 ;
+  @apply transition duration-[1000ms] ease-in-out h-full opacity-80 border border-gray-700 w-full rounded-2xl bg-gray-900 mb-4 ;
   // Styles de base
 }
+
+#about.page {
+  @apply lg:grid-rows-2; // Ajuste ici le nombre de rangées pour l'ID 'about' uniquement sur desktop
+}
+
+#contact.page {
+  @apply lg:grid-rows-2; // Ajuste ici le nombre de rangées pour l'ID 'contact' uniquement sur desktop
+}
+
 
 .link {
   @apply text-white hover:text-indigo-400 transition duration-300 p-2 md:p-0;
@@ -96,14 +105,14 @@ html {
   position: absolute;
   left: max(calc(100px * 9), 100%);
   animation-name: scrollLeft;
-  animation-duration: 30s;
+  animation-duration: 15s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
 
 @media (min-width: 1024px) {
   .wrapper {
-    margin-top: 14rem;
+    margin-top: 5rem;
   }
 
   .slider-container {
@@ -134,6 +143,9 @@ html {
 @media (min-width: 2560px) {
   .wrapper {
     margin-top: 10rem;
+    margin-bottom: 5rem;
+    width: 100%;
+    max-width: 2000px;
   }
 
   .slider-container {

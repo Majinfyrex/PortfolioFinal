@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./**/*.html', "./node_modules/flowbite/**/*.js"],
+  content: [ './index.html',                  // fichier HTML principal
+  './src/**/*.{html,js}',          // autres fichiers HTML ou JS dans src
+  "./node_modules/flowbite/**/*.js", // fichiers de Flowbite nécessaires
+      ],
   theme: {
     screens: {
       'sm': '640px',
@@ -20,6 +23,8 @@ export default {
   },
 
   plugins: [
-    require('flowbite/plugin')
+    require('flowbite/plugin'),
+    require('tailwindcss-animated'),
+    require('tailwindcss-intersect')
   ],
 }
