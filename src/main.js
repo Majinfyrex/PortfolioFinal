@@ -12,3 +12,5 @@ import ScrollReveal from "scrollreveal";
 import { Observer } from 'tailwindcss-intersect';
 
 Observer.start();
+
+import 'flowbite';
